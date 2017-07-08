@@ -1,19 +1,25 @@
 require('./config/config');
 
-const path = require('path');
-
-const publicPath = path.join(__dirname, '../public');
-
-// console.log(__dirname + '/../public');
-// console.log(publicPath);
-
 // Modules
+const path = require('path');
 const express = require('express');
-// const bodyParser = require('body-parser');
-// const _ = require('lodash');
+const socketIO = require('socket.io');
+const http = require('http');
+
+// Locals
 const app = express();
+const server = http.createServer(app);
+const io = socketIO(server);
+const publicPath = path.join(__dirname, '../public');
 app.use(express.static(publicPath));
-// app.use(bodyParser.json());
+
+io.on('connection', socket => {
+  console.log('New user connected');
+
+  socket.on('disconnect', socket => {
+    console.log('User disconnected');
+  });
+});
 
 // Routes
 // app.get();
@@ -23,5 +29,5 @@ const PORT = process.env.PORT;
 const ENV = process.env.NODE_ENV;
 let message = `Server is running on port ${PORT} in ${ENV}`;
 app.get('*', (req, res) => res.send('404 - Not found'));
-app.listen(PORT, () => console.log(message));
+server.listen(PORT, () => console.log(message));
 module.exports = { app };
