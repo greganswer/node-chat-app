@@ -18,12 +18,11 @@ io.on('connection', socket => {
 
   socket.on('createMessage', message => {
     console.log('Create message ', message);
-  });
-
-  socket.emit('newMessage', {
-    from: 'Mike',
-    text: 'What is going on?',
-    createdAt: 12312,
+    io.emit('newMessage', {
+      from: message.from,
+      text: message.text,
+      createdAt: new Date().getTime(),
+    });
   });
 
   socket.on('disconnect', socket => {
