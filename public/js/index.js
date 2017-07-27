@@ -1,6 +1,6 @@
-let socket = io();
-let messageInput = $('[name=message]');
-let locationButton = $('#send-location');
+var socket = io();
+var messageInput = $('[name=message]');
+var locationButton = $('#send-location');
 
 socket.on('connect', function() {
   console.log('Connected to server');
@@ -11,17 +11,19 @@ socket.on('disconnect', function() {
 });
 
 socket.on('newMessage', function(message) {
+  var formattedTime = moment(message.createdAt).format('h:mm a');
   console.log('New message', message);
-  let li = $('<li></li>');
-  li.text(`${message.from}: ${message.text}`);
+  var li = $('<li></li>');
+  li.text(`${message.from} ${formattedTime}: ${message.text}`);
   $('#messages').append(li);
 });
 
 socket.on('newLocationMessage', function(message) {
-  let li = $('<li></li>');
-  let a = $('<a target="_blank">My current location</a>');
+  var formattedTime = moment(message.createdAt).format('h:mm a');
+  var li = $('<li></li>');
+  var a = $('<a target="_blank">My current location</a>');
 
-  li.text(`${message.from}: `);
+  li.text(`${message.from} ${formattedTime}: `);
   a.attr('href', message.url);
   li.append(a);
   $('#messages').append(li);

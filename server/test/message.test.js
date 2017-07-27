@@ -1,6 +1,5 @@
 // Modules
 const expect = require('expect');
-// const request = require('supertest');
 
 // Local
 const { app } = require('./../server');
@@ -9,6 +8,9 @@ const {
   generateLocationMessage,
 } = require('./../utils/message');
 
+/**
+ * Testing
+ */
 describe('generateMessage', () => {
   it('should generate correct message object', () => {
     let from = 'Joe';
