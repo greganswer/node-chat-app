@@ -89,16 +89,9 @@ socket.on('newLocationMessage', function(message) {
 
 $('#message-form').on('submit', function(e) {
   e.preventDefault();
-  socket.emit(
-    'createMessage',
-    {
-      from: 'User',
-      text: $messageInput.val(),
-    },
-    function() {
-      $messageInput.val('');
-    },
-  );
+  socket.emit('createMessage', { text: $messageInput.val() }, function() {
+    $messageInput.val('');
+  });
 });
 
 $locationButton.on('click', function(e) {
