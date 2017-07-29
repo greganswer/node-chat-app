@@ -41,7 +41,6 @@ socket.on('connect', function() {
       alert(err);
       window.location.href = '/';
     } else {
-      console.log('No error');
     }
   });
 });
@@ -49,9 +48,7 @@ socket.on('connect', function() {
 /**
  * When a user disconnects from /chat.html
  */
-socket.on('disconnect', function() {
-  console.log('Disconnected from server');
-});
+socket.on('disconnect', function() {});
 
 /**
  * When the user list is updated
