@@ -10,3 +10,4 @@ Currently viewable at https://immense-sierra-44077.herokuapp.com/
 - [Prevent join/leave spam](https://www.udemy.com/the-complete-nodejs-developer-course-2/learn/v4/questions/2520318)
 - Add current users count for the login page and the selection list
 - [Add authentication](https://www.udemy.com/the-complete-nodejs-developer-course-2/learn/v4/questions/2534768) and [read this](https://auth0.com/blog/auth-with-socket-io/)
+- If browser tab is not active, flash the tab and show unread message count https://www.google.ca/search?q=javascript+detect+if+tab+is+active&oq=js+detect+if+ta&aqs=chrome.1.69i57j0l5.12357j0j7&sourceid=chrome&ie=UTF-8
