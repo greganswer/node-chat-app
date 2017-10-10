@@ -1,3 +1,4 @@
+Based on the tutorial for this Node course on Udemy: https://www.udemy.com/the-complete-nodejs-developer-course-2
 Currently viewable at https://immense-sierra-44077.herokuapp.com/
 
 #### Future ideas
