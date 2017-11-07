@@ -15,13 +15,13 @@ Node Chat App
     - [Additional resources](#additional-resources)
 - [The Project](#the-project)
     - [Proposal](#proposal)
-    - [Target](#target)
+    - [Target audiences](#target-audiences)
     - [Goals](#goals)
     - [Requirements](#requirements)
     - [Design considerations](#design-considerations)
     - [Todo](#todo)
 - [Contributions](#contributions)
-    - [Style guides](#style-guide)
+    - [Style guides](#style-guides)
 
 ## Getting started
 
@@ -64,7 +64,7 @@ npm run test-watch
 
 I propose to complete this assignment as part of my quest to learn more about Node.js.
 
-### Target Audiences
+### Target audiences
 
 - Hiring managers who want to see what I can do
 - Developers who want to see some Node.js sample code
